@@ -18,7 +18,7 @@ export default function Hero() {
         variants={fadeUp}
         initial="hidden"
         animate="show"
-        className="font-mono text-xs text-subtle tracking-widest uppercase mb-6"
+        className="font-mono text-xs text-dim tracking-widest uppercase mb-6"
       >
         Lisbon, Portugal
       </motion.p>
@@ -38,15 +38,26 @@ export default function Hero() {
         variants={fadeUp}
         initial="hidden"
         animate="show"
-        className="text-lg sm:text-xl text-body max-w-xl leading-relaxed mb-10 text-balance"
+        className="text-lg sm:text-xl text-body max-w-xl leading-relaxed mb-3 text-balance"
       >
-        Backend &amp; Infrastructure Engineer. 8+ years in enterprise IT,
-        now building Python APIs, distributed systems, and DevSecOps pipelines.
-        Open to remote roles.
+        Backend &amp; Infrastructure Engineer.
+        8+ years in enterprise IT, now building Python APIs,
+        distributed systems, and DevSecOps pipelines.
+      </motion.p>
+
+      <motion.p
+        custom={3}
+        variants={fadeUp}
+        initial="hidden"
+        animate="show"
+        className="font-mono text-xs text-dim tracking-wide mb-10"
+      >
+        Next stop &mdash;&nbsp;
+        <span className="text-accent">Space Science &amp; Technology</span>
       </motion.p>
 
       <motion.div
-        custom={3}
+        custom={4}
         variants={fadeUp}
         initial="hidden"
         animate="show"

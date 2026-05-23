@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
-  html {
-    scroll-behavior: smooth;
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #08080f;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(100, 80, 200, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 30% at 80% 20%, rgba(60, 40, 140, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
   }
 
   ::selection {
-    background-color: #e8e0d0;
-    color: #0a0a0a;
+    background-color: rgba(200, 191, 255, 0.2);
+    color: #e8e6f0;
   }
 
   :focus-visible {
-    outline: 2px solid #e8e0d0;
+    outline: 2px solid #c8bfff;
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -31,7 +35,21 @@
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-balance { text-wrap: balance; }
+
+  .star-field {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,0.10) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 70%, rgba(255,255,255,0.08) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,0.12) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.07) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 50%, rgba(255,255,255,0.09) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,0.11) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 40%, rgba(255,255,255,0.06) 0%, transparent 100%);
   }
 }

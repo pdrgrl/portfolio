@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const links = [
-  { label: 'Work', href: '#work' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Work',    href: '#work' },
+  { label: 'About',   href: '#about' },
+  { label: 'Skills',  href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -21,7 +21,7 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-bg/90 backdrop-blur-md border-b border-border' : ''
+        scrolled ? 'bg-bg/80 backdrop-blur-md border-b border-border' : ''
       }`}
     >
       <nav

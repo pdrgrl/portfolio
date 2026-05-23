@@ -11,14 +11,15 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
         className="max-w-xl"
       >
-        <p className="font-mono text-xs text-subtle tracking-widest uppercase mb-3">Let&apos;s Talk</p>
+        <p className="font-mono text-xs text-dim tracking-widest uppercase mb-3">Let&apos;s Talk</p>
         <h2 className="text-2xl sm:text-3xl font-semibold text-heading tracking-tight mb-4">
           Open to Remote Roles
         </h2>
         <p className="text-sm text-body leading-relaxed mb-8">
           Currently available for fully remote, individual-contributor positions in
           Backend Engineering, Cloud Infrastructure, or DevSecOps.
-          If you&apos;re building something interesting, I&apos;d like to hear about it.
+          If you&apos;re building something interesting &mdash; especially at the intersection
+          of infrastructure and space systems &mdash; I&apos;d like to hear about it.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <a
