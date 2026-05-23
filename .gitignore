@@ -1,0 +1,27 @@
+# deps
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# next
+/.next/
+/out/
+
+# prod
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# local env
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# ts
+*.tsbuildinfo
+next-env.d.ts
