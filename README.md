@@ -1,4 +1,4 @@
-# pedrogrilo.dev
+# pedrogrilo.space
 
 Personal portfolio — built with Next.js 14, Tailwind CSS, and Framer Motion.
 
