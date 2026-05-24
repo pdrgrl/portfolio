@@ -1,81 +1,49 @@
 'use client';
-import { motion } from 'framer-motion';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 22 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.12, duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-  }),
-};
+import StatusCard from './StatusCard';
+import { Radio, Rocket } from './icons';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-5xl mx-auto">
-      <motion.p
-        custom={0}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="font-mono text-xs text-dim tracking-widest uppercase mb-6"
-      >
-        Lisbon, Portugal
-      </motion.p>
+    <section id="top" className="items-center px-6 pt-24 pb-16 max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+        <div className="animate-slide-up">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-violet-500/30 mb-6 bg-white/5 relative">
+            <img
+              src="/me.webp"
+              alt="Pedro Grilo"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-      <motion.h1
-        custom={1}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="text-4xl sm:text-5xl md:text-6xl font-semibold text-heading leading-tight tracking-tight text-balance mb-6"
-      >
-        Pedro Grilo
-      </motion.h1>
+          <p className="font-mono text-xs text-violet-400/80 tracking-widest uppercase mb-4 flex items-center gap-2">
+            <Radio size={14} className="animate-pulse" /> Lisbon, Portugal
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white leading-tight tracking-tight text-balance mb-6">
+            Pedro Grilo
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-400 max-w-xl leading-relaxed mb-6 text-balance">
+            Backend &amp; Infrastructure Engineer. <br className="hidden sm:block" />
+            8+ years in enterprise IT, now building Python APIs, distributed systems, and DevSecOps pipelines.
+          </p>
+          <p className="font-mono text-xs text-gray-500 tracking-wide mb-10 flex items-center gap-2 border border-white/10 rounded-full py-1 px-3 inline-flex bg-white/5">
+            <Rocket size={14} className="text-violet-400" />
+            Next stop — <span className="text-violet-300">Space Science &amp; Technology</span>
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a href="#work" className="px-6 py-3 bg-violet-600 text-white text-sm font-medium rounded-md hover:bg-violet-500 transition-colors duration-200 cursor-pointer shadow-lg shadow-violet-900/20">
+              View Work
+            </a>
+            <a href="#contact" className="px-6 py-3 border border-white/20 text-white text-sm font-medium rounded-md hover:border-white/40 hover:bg-white/5 transition-all duration-200 cursor-pointer">
+              Get in Touch
+            </a>
+          </div>
+        </div>
 
-      <motion.p
-        custom={2}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="text-lg sm:text-xl text-body max-w-xl leading-relaxed mb-3 text-balance"
-      >
-        Backend &amp; Infrastructure Engineer.
-        8+ years in enterprise IT, now building Python APIs,
-        distributed systems, and DevSecOps pipelines.
-      </motion.p>
-
-      <motion.p
-        custom={3}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="font-mono text-xs text-dim tracking-wide mb-10"
-      >
-        Next stop &mdash;&nbsp;
-        <span className="text-accent">Space Science &amp; Technology</span>
-      </motion.p>
-
-      <motion.div
-        custom={4}
-        variants={fadeUp}
-        initial="hidden"
-        animate="show"
-        className="flex flex-wrap gap-4"
-      >
-        <a
-          href="#work"
-          className="px-5 py-2.5 bg-accent text-bg text-sm font-medium rounded hover:bg-heading transition-colors duration-200 cursor-pointer"
-        >
-          View Work
-        </a>
-        <a
-          href="#contact"
-          className="px-5 py-2.5 border border-border text-heading text-sm font-medium rounded hover:border-muted transition-colors duration-200 cursor-pointer"
-        >
-          Get in Touch
-        </a>
-      </motion.div>
+        <div className="hidden lg:flex justify-end animate-slide-up animate-slide-delay-200">
+          <StatusCard />
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,5 +1,7 @@
 'use client';
-import { motion } from 'framer-motion';
+
+import { useScrollReveal } from './portfolio-utils';
+import { Activity, Database, Github, Layers } from './icons';
 
 const projects = [
   {
@@ -8,95 +10,79 @@ const projects = [
       'Capstone dissertation project. Architected a real-time digital twin of a historical energy system: 3D reconstruction in Blender, real-time simulation in Unity (C#), and a Python RAG system querying historical museum archives via ChromaDB and vector search.',
     tags: ['Python', 'FastAPI', 'RAG', 'ChromaDB', 'Unity', 'C#', 'Blender'],
     links: { github: 'https://github.com/pdrgrl' },
-    highlight: true,
+    icon: Layers,
+    featured: true,
   },
   {
-    title: 'RAG API — Historical Archive Query Engine',
+    title: 'RAG API — Historical Archive Query',
     description:
       'Python backend exposing a REST API that retrieves semantically relevant documents from digitised museum archives using vector embeddings, context graphs, and LLM integration.',
-    tags: ['Python', 'FastAPI', 'LLM API', 'ChromaDB', 'Context Graphs', 'Docker'],
+    tags: ['Python', 'FastAPI', 'LLM API', 'ChromaDB', 'Docker'],
     links: { github: 'https://github.com/pdrgrl' },
+    icon: Database,
+    featured: false,
   },
   {
     title: 'Broadcast Infrastructure — SPORT TV',
     description:
-      'Managed 24/7 uptime of critical broadcast systems across VMware clusters, Check Point firewalls, and Active Directory. Progressed from infrastructure technician to IT Support Supervisor over five years.',
-    tags: ['VMware', 'Check Point CCSA', 'Windows Server', 'Active Directory', 'PRTG'],
+      'Managed 24/7 uptime of critical broadcast systems across VMware clusters, Check Point firewalls, and Active Directory. Progressed from infrastructure technician to IT Support Supervisor.',
+    tags: ['VMware', 'Check Point CCSA', 'Windows Server', 'PRTG'],
     links: {},
+    icon: Activity,
+    featured: false,
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-};
-
 export default function Projects() {
-  return (
-    <section id="work" className="px-6 py-24 max-w-5xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.5 }}
-        className="mb-14"
-      >
-        <p className="font-mono text-xs text-subtle tracking-widest uppercase mb-3">Selected Work</p>
-        <h2 className="text-2xl sm:text-3xl font-semibold text-heading tracking-tight">Projects</h2>
-      </motion.div>
+  const [ref, isVisible] = useScrollReveal();
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: '-60px' }}
-        className="grid gap-4"
-      >
-        {projects.map((p) => (
-          <motion.article
-            key={p.title}
-            variants={cardVariants}
-            className={`group p-6 rounded-lg border transition-colors duration-200 ${
-              p.highlight
-                ? 'border-muted bg-surface hover:border-subtle'
-                : 'border-border bg-surface hover:border-muted'
-            }`}
-          >
-            <div className="flex items-start justify-between gap-4 mb-3">
-              <h3 className="text-base font-medium text-heading leading-snug">{p.title}</h3>
-              <div className="flex gap-3 shrink-0">
-                {p.links.github && (
-                  <a
-                    href={p.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-subtle hover:text-heading transition-colors duration-200 text-xs font-mono"
-                    aria-label={`GitHub — ${p.title}`}
-                  >
-                    GitHub ↗
-                  </a>
-                )}
-              </div>
-            </div>
-            <p className="text-sm text-body leading-relaxed mb-4">{p.description}</p>
-            <ul className="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
-              {p.tags.map((t) => (
-                <li
-                  key={t}
-                  className="font-mono text-xs text-subtle border border-border rounded px-2 py-0.5"
-                >
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </motion.article>
-        ))}
-      </motion.div>
+  return (
+    <section id="work" className="px-6 py-24 max-w-6xl mx-auto scroll-mt-12">
+      <div ref={ref} className={`transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        <p className="font-mono text-xs text-violet-400/80 tracking-widest uppercase mb-3">Selected Work</p>
+        <h2 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight mb-10">Engineering Projects</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project) => {
+            const Icon = project.icon;
+
+            return (
+              <article
+                key={project.title}
+                className={`group relative p-8 rounded-xl border transition-all duration-300 bg-[#0c0c16]/80 backdrop-blur-sm ${
+                  project.featured
+                    ? 'md:col-span-2 border-violet-500/30 hover:border-violet-400/50 shadow-lg shadow-violet-900/10'
+                    : 'border-white/10 hover:border-white/20'
+                }`}
+              >
+                <div className="absolute top-0 right-0 p-6 opacity-20 group-hover:opacity-40 transition-opacity">
+                  <Icon size={24} className="text-violet-400" />
+                </div>
+                <div className="flex items-start justify-between gap-4 mb-4 relative z-10">
+                  <h3 className="text-xl font-medium text-white leading-snug pr-8">{project.title}</h3>
+                </div>
+                <p className="text-sm text-gray-400 leading-relaxed mb-6 max-w-3xl relative z-10">{project.description}</p>
+
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-auto relative z-10">
+                  <ul className="flex flex-wrap gap-2" role="list">
+                    {project.tags.map((tag) => (
+                      <li key={tag} className="font-mono text-xs text-gray-300 bg-white/5 border border-white/10 rounded-md px-2.5 py-1">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {project.links.github && (
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-violet-300 hover:text-violet-200 transition-colors text-sm font-mono shrink-0">
+                      <Github size={16} /> Code
+                    </a>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }
