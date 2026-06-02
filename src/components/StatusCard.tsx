@@ -2,7 +2,7 @@
 
 export default function StatusCard() {
   const stats = [
-    { label: 'Experience', value: '8+ yrs' },
+    { label: 'Experience', value: '6+ years' },
     { label: 'Specialty', value: 'Python APIs' },
     { label: 'Focus', value: 'DevSecOps' },
     { label: 'Ambition', value: 'Space Tech' },
@@ -11,7 +11,7 @@ export default function StatusCard() {
   return (
     <div className="relative w-full max-w-sm rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md">
       <div className="mb-3">
-        <p className="text-xs uppercase tracking-widest text-violet-300/80">System status</p>
+        <p className="text-xs uppercase tracking-widest text-violet-300/80">System Status</p>
         <h3 className="mt-1 text-lg font-semibold text-white">Live snapshot</h3>
       </div>
 

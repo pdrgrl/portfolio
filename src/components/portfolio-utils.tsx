@@ -152,9 +152,9 @@ export function MockTerminal() {
   return (
     <div className="relative w-full max-w-lg rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md">
       <div className="mb-4">
-        <p className="text-xs uppercase tracking-[0.3em] text-violet-300/80">System status</p>
-        <h3 className="mt-2 text-lg font-semibold text-white">Live operational snapshot</h3>
-      </div>
+          <p className="text-xs uppercase tracking-[0.3em] text-violet-300/80">System Status</p>
+          <h3 className="mt-2 text-lg font-semibold text-white">Live operational snapshot</h3>
+        </div>
 
       <div className="space-y-3">
         {lines.map((line, index) => (

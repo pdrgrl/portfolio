@@ -16,7 +16,7 @@ export default function About() {
             <p>
               I started in IT support, working my way through broadcast infrastructure at SPORT TV —
               one of the highest-uptime, highest-pressure environments you can operate in.
-              Over eight years I moved from first-line technician to IT Support Supervisor,
+              With 6+ years' experience I moved from first-line technician to IT Support Supervisor,
               owning VMware clusters, Check Point firewalls, and a 24/7 broadcast network.
             </p>
             <p>
@@ -26,10 +26,12 @@ export default function About() {
               The research was published.
             </p>
             <p>
-              I&apos;m now targeting fully remote, individual-contributor roles in Backend Engineering,
-              Cloud Infrastructure, or DevSecOps. The longer arc points toward space —
-              specifically an MSc in <span className="text-violet-300 font-medium">Space Science &amp; Technology </span> at The Open University, specialising in Digital Forensics &amp; Cybersecurity.
-              The infrastructure skills transfer directly.
+              I&apos;m targeting remote, individual-contributor roles in Backend Engineering,
+              Cloud Infrastructure, or DevSecOps. My longer-term aim is to complement practical
+              experience with graduate study focused on space systems and industry collaboration.
+            </p>
+            <p className="mt-2 text-sm text-gray-300">
+              Planned postgraduate study: MSc in Space Science and Technology (Digital Forensics &amp; Cyber Security) and a Master of Business Engineering (MBE) in Space Systems.
             </p>
           </div>
         </div>
@@ -45,10 +47,10 @@ export default function About() {
             <p className="font-mono text-xs text-gray-500 tracking-widest uppercase mb-6">Career Highlights</p>
             <div className="space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
               {[
-                { year: 'Present', desc: 'Incoming MSc Space Science & Technology at Open University' },
                 { year: '2026', desc: 'BSc Computer & Multimedia Engineering (Published RAG)' },
-                { year: '8+ Yrs', desc: 'Enterprise IT — Broadcast, Infra, Security Supervisor' },
-                { year: 'Cert', desc: 'Check Point CCSA R81.10 Certified' },
+                { year: '2026–2027', desc: 'Remote roles in Backend/Infrastructure/Security (gaining professional context)' },
+                { year: '2027–2028', desc: 'MSc in Space Science & Technology — Digital Forensics & Cyber Security' },
+                { year: '2029–2030', desc: 'Master of Business Engineering (MBE) — Space Systems (IST) with industry projects at CEiiA / CTI‑Aeroespacial' },
               ].map((item, idx) => (
                 <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                   <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-violet-500/50 bg-[#08080f] text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow" />

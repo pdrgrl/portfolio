@@ -1,6 +1,6 @@
 'use client';
 
-import { ExternalLink, Linkedin, Mail } from './icons';
+import { ExternalLink, Linkedin } from './icons';
 import { useScrollReveal } from './portfolio-utils';
 
 export default function Contact() {
@@ -15,10 +15,7 @@ export default function Contact() {
           Currently available for fully remote, individual-contributor positions in Backend Engineering, Cloud Infrastructure, or DevSecOps.
           If you're building something interesting — especially at the intersection of infrastructure and space systems — I'd like to hear about it.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="mailto:pedro99grilo@gmail.com" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-violet-600 text-white text-sm font-medium rounded-md hover:bg-violet-500 transition-colors shadow-lg shadow-violet-900/20">
-            <Mail size={18} /> pedro99grilo@gmail.com
-          </a>
+        <div className="flex justify-center">
           <a
             href="https://www.linkedin.com/in/pdrgrl"
             target="_blank"

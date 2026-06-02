@@ -24,11 +24,11 @@ export default function Hero() {
           </h1>
           <p className="text-lg sm:text-xl text-gray-400 max-w-xl leading-relaxed mb-6 text-balance">
             Backend &amp; Infrastructure Engineer. <br className="hidden sm:block" />
-            8+ years in enterprise IT, now building Python APIs, distributed systems, and DevSecOps pipelines.
+            6+ years in enterprise IT, now building Python APIs, distributed systems, and DevSecOps pipelines.
           </p>
           <p className="font-mono text-xs text-gray-500 tracking-wide mb-10 flex items-center gap-2 border border-white/10 rounded-full py-1 px-3 inline-flex bg-white/5">
             <Rocket size={14} className="text-violet-400" />
-            Next stop — <span className="text-violet-300">Space Science &amp; Technology</span>
+            Next stops — <span className="text-violet-300">MSc in Space Science &amp; Technology (Digital Forensics &amp; Cyber Security) &rarr; MBE in Space Systems</span>
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#work" className="px-6 py-3 bg-violet-600 text-white text-sm font-medium rounded-md hover:bg-violet-500 transition-colors duration-200 cursor-pointer shadow-lg shadow-violet-900/20">

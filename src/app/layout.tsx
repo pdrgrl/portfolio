@@ -17,10 +17,10 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Pedro Grilo — Backend & Infrastructure Engineer',
   description:
-    'Backend and infrastructure engineer with 8+ years in enterprise IT, specialising in Python, FastAPI, Docker, and DevSecOps. Open to remote roles.',
+    'Backend and infrastructure engineer with 6+ years in enterprise IT, specialising in Python, FastAPI, Docker, and DevSecOps. Open to remote roles.',
   openGraph: {
     title: 'Pedro Grilo — Backend & Infrastructure Engineer',
-    description: 'Backend and infrastructure engineer based in Lisbon, Portugal.',
+    description: 'Backend and infrastructure engineer based in Lisbon, Portugal. 6+ years experience in enterprise IT.',
     url: 'https://pedrogrilo.dev',
     siteName: 'Pedro Grilo',
     locale: 'en_US',
