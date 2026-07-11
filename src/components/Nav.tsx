@@ -1,14 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 const links = [
-  { label: 'Work', href: '/#work' },
-  { label: 'About', href: '/#about' },
-  { label: 'Skills', href: '/#skills' },
-  { label: 'Contact', href: '/#contact' },
-  { label: 'All Projects', href: '/projects' },
+  { label: 'Work', href: '#work' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Nav() {
@@ -28,15 +26,15 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between" aria-label="Primary navigation">
-        <Link href="/" className="font-mono text-sm text-gray-200 tracking-tight hover:text-violet-300 transition-colors">
+        <a href="#top" className="font-mono text-sm text-gray-200 tracking-tight hover:text-violet-300 transition-colors">
           pg.
-        </Link>
+        </a>
         <ul className="flex items-center gap-6 sm:gap-8" role="list">
           {links.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+              <a href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
                 {link.label}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
