@@ -3,9 +3,9 @@
 export default function StatusCard() {
   const stats = [
     { label: 'Experience', value: '6+ years' },
-    { label: 'Specialty', value: 'Python APIs' },
-    { label: 'Focus', value: 'DevSecOps' },
-    { label: 'Ambition', value: 'Space Tech' },
+    { label: 'Specialty', value: 'Applied AI' },
+    { label: 'Focus', value: 'Backend Systems' },
+    { label: 'Studying', value: 'Space Tech' },
   ];
 
   return (

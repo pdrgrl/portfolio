@@ -23,13 +23,17 @@ export default function Hero() {
             Pedro Grilo
           </h1>
           <p className="text-lg sm:text-xl text-gray-400 max-w-xl leading-relaxed mb-6 text-balance">
-            Backend &amp; Infrastructure Engineer. <br className="hidden sm:block" />
-            6+ years in enterprise IT, now building Python APIs, distributed systems, and DevSecOps pipelines.
+            Systems and Infrastructure Engineer with 6+ years of experience, currently focusing on backend systems and applied AI (RAG &amp; LLM engineering).
           </p>
-          <p className="font-mono text-xs text-gray-500 tracking-wide mb-10 flex items-center gap-2 border border-white/10 rounded-full py-1 px-3 inline-flex bg-white/5">
-            <Rocket size={14} className="text-violet-400" />
-            Next stops — <span className="text-violet-300">MSc in Space Science &amp; Technology (Digital Forensics &amp; Cyber Security) &rarr; MBE in Space Systems</span>
-          </p>
+          
+          <div className="font-mono text-xs text-gray-500 tracking-wide mb-10 flex items-start gap-2 border border-white/10 rounded-xl sm:rounded-full py-2 px-3 inline-flex bg-white/5 max-w-full">
+            <Rocket size={14} className="text-violet-400 shrink-0 mt-0.5" />
+            <p className="leading-relaxed">
+              <span className="whitespace-nowrap text-gray-400 mr-1">Next stops:</span><br></br>
+              <span className="text-violet-300">MSc in Space Science &amp; Technology &amp; MBE in Space Systems</span>
+            </p>
+          </div>
+
           <div className="flex flex-wrap gap-4">
             <a href="#work" className="px-6 py-3 bg-violet-600 text-white text-sm font-medium rounded-md hover:bg-violet-500 transition-colors duration-200 cursor-pointer shadow-lg shadow-violet-900/20">
               View Work
