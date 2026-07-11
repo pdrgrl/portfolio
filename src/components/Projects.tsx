@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useScrollReveal } from './portfolio-utils';
 import { Database, Layers, Github, Activity, Code2, Shield, Rocket } from './icons';
 
-const categories = ['All', 'AI & Data', 'Web Apps', 'Games & Tools'] as const;
+const categories = ['All', 'AI & Data', 'Web Apps', 'Games & Tools', '3D Art & Creative'] as const;
 type Category = typeof categories[number];
 
 // Capstone & Highlighted projects shown at the top
@@ -125,6 +125,15 @@ const archiveProjectsData = [
 
   // --- Private ---
   {
+    title: 'Gravity Flip',
+    description: 'Cross-platform endless runner game built in Unity (C#) where players flip gravity dynamically to dodge obstacles. Features procedural level generation and haptic feedback.',
+    tags: ['C#', 'Unity', 'URP', 'Mobile Game', 'Procedural Generation'],
+    links: {},
+    icon: Code2,
+    category: 'Games & Tools',
+    isPrivate: true,
+  },
+  {
     title: 'KINETIC',
     description: 'First-person psychic thriller set in a brutalist concrete facility. Navigating abandoned facility using asymmetric dual-hand psychic controls.',
     tags: ['C#', 'Unity 2022.3 LTS', 'URP', '3D Physics', 'Game Design'],
@@ -178,12 +187,25 @@ const archiveProjectsData = [
     category: 'Web Apps',
     isPrivate: true,
   },
+
+  // --- Creative ---
+  {
+    title: 'Glasses',
+    description: 'Photorealistic 3D glasses model and scene design where I thrived for complete physical realism. Modeled and rendered in Blender Cycles, with post-processing adjustments in Photoshop.',
+    tags: ['Blender', 'Photoshop', '3D Modeling', 'Cycles Render', 'Photorealism'],
+    links: {},
+    icon: Layers,
+    category: '3D Art & Creative',
+    isPrivate: true,
+    image: '/art/glasses.png',
+  },
 ];
 
 export default function Projects() {
   const [ref, isVisible] = useScrollReveal();
   const [selectedCategory, setSelectedCategory] = useState<Category>('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeImage, setActiveImage] = useState<string | null>(null);
 
   const filteredProjects = archiveProjectsData.filter((project) => {
     const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
@@ -300,9 +322,23 @@ export default function Projects() {
                 return (
                   <article
                     key={project.title}
-                    className="group relative p-6 rounded-xl border border-white/5 hover:border-violet-500/30 transition-all duration-300 bg-[#0c0c16]/50 hover:bg-[#0c0c16]/80 backdrop-blur-sm flex flex-col justify-between"
+                    className="group relative p-6 rounded-xl border border-white/5 hover:border-violet-500/30 transition-all duration-300 bg-[#0c0c16]/50 hover:bg-[#0c0c16]/80 backdrop-blur-sm flex flex-col justify-between overflow-hidden"
                   >
                     <div>
+                      {/* Project Visual Preview (Clickable Lightbox Trigger) */}
+                      {'image' in project && project.image && (
+                        <div 
+                          onClick={() => setActiveImage(project.image)}
+                          className="mb-4 overflow-hidden rounded-lg aspect-video border border-white/5 relative bg-black/40 cursor-zoom-in"
+                        >
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                      )}
+
                       <div className="flex items-center justify-between mb-4">
                         <div className="p-2 rounded-lg bg-white/5 text-violet-400 group-hover:text-violet-300 transition-colors">
                           <Icon size={20} />
@@ -375,6 +411,29 @@ export default function Projects() {
         </div>
 
       </div>
+
+      {/* --- IMAGE LIGHTBOX OVERLAY --- */}
+      {activeImage && (
+        <div
+          onClick={() => setActiveImage(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md cursor-zoom-out"
+        >
+          <div className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center p-4">
+            <img
+              src={activeImage}
+              alt="Project render preview"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg border border-white/10 shadow-2xl animate-fade-in"
+            />
+            <button
+              onClick={() => setActiveImage(null)}
+              className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 p-2.5 rounded-full transition-colors flex items-center justify-center"
+              aria-label="Close fullscreen preview"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
