@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="animate-slide-up">
           <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-violet-500/30 mb-6 bg-white/5 relative">
             <img
-              src="/me.png"
+              src="/me.webp"
               alt="Pedro Grilo"
               className="w-full h-full object-cover"
             />

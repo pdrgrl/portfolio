@@ -197,7 +197,7 @@ const archiveProjectsData = [
     icon: Layers,
     category: '3D Art & Creative',
     isPrivate: true,
-    image: '/art/glasses.png',
+    image: '/art/glasses.webp',
   },
   {
     title: 'Isometric Room',
@@ -207,7 +207,7 @@ const archiveProjectsData = [
     icon: Layers,
     category: '3D Art & Creative',
     isPrivate: true,
-    image: '/art/isometric_room.png',
+    image: '/art/isometric_room.webp',
   },
 ];
 
