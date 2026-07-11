@@ -10,10 +10,12 @@ export default function Contact() {
     <section id="contact" className="px-6 py-32 max-w-6xl mx-auto scroll-mt-12">
       <div ref={ref} className={`max-w-2xl mx-auto text-center transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         <p className="font-mono text-xs text-violet-400/80 tracking-widest uppercase mb-4">Let's Talk</p>
-        <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-6">Open to Remote Roles</h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-6">Let's Connect</h2>
         <p className="text-base text-gray-400 leading-relaxed mb-10">
-          Currently available for fully remote, individual-contributor positions in Backend Engineering, Cloud Infrastructure, or DevSecOps.
-          If you're building something interesting — especially at the intersection of infrastructure and space systems — I'd like to hear about it.
+          Open to remote Backend Developer, Software Engineer, Python Developer, AI Engineer, and DevOps Engineer roles.
+          Based in Lisbon, Portugal.
+          <br></br>
+          Long-term focus: space systems engineering.
         </p>
         <div className="flex justify-center">
           <a
