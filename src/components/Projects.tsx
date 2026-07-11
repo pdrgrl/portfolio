@@ -171,7 +171,7 @@ const archiveProjectsData = [
   },
   {
     title: 'genre-guesser',
-    description: 'Daily music genre browser guessing game (Wordle-style game) utilizing song audio metadata and the Last.fm API.',
+    description: 'Daily music music browser guessing game (Wordle-style game) utilizing song audio metadata and the Last.fm API.',
     tags: ['JavaScript', 'HTML', 'CSS', 'Last.fm API', 'Web Game'],
     links: {},
     icon: Activity,
@@ -198,6 +198,16 @@ const archiveProjectsData = [
     category: '3D Art & Creative',
     isPrivate: true,
     image: '/art/glasses.png',
+  },
+  {
+    title: 'Isometric Room',
+    description: 'A cozy, stylized 3D isometric room design modeled, textured, and lit in Blender, focusing on warm lighting tones and detailed prop modeling.',
+    tags: ['Blender', '3D Modeling', 'Isometric Design', 'Lighting Design', 'Stylized Art'],
+    links: {},
+    icon: Layers,
+    category: '3D Art & Creative',
+    isPrivate: true,
+    image: '/art/isometric_room.png',
   },
 ];
 
@@ -325,19 +335,22 @@ export default function Projects() {
                     className="group relative p-6 rounded-xl border border-white/5 hover:border-violet-500/30 transition-all duration-300 bg-[#0c0c16]/50 hover:bg-[#0c0c16]/80 backdrop-blur-sm flex flex-col justify-between overflow-hidden"
                   >
                     <div>
-                      {/* Project Visual Preview (Clickable Lightbox Trigger) */}
-                      {'image' in project && project.image && (
-                        <div 
-                          onClick={() => setActiveImage(project.image)}
-                          className="mb-4 overflow-hidden rounded-lg aspect-video border border-white/5 relative bg-black/40 cursor-zoom-in"
-                        >
+                      {/* Unified Project Visual Header (Preview or Icon Gradient Placeholder) */}
+                      <div className="mb-4 overflow-hidden rounded-lg aspect-video border border-white/5 relative bg-black/40">
+                        {'image' in project && project.image ? (
                           <img
-                            src={project.image}
+                            src={('preview' in project && typeof project.preview === 'string') ? project.preview : project.image}
                             alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            onClick={() => setActiveImage(project.image)}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-zoom-in"
                           />
-                        </div>
-                      )}
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-violet-950/20 to-indigo-950/20 flex items-center justify-center relative select-none">
+                            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,92,246,0.06),transparent)] pointer-events-none" />
+                            <Icon size={28} className="text-violet-400/40 group-hover:text-violet-300/60 group-hover:scale-110 transition-all duration-300" />
+                          </div>
+                        )}
+                      </div>
 
                       <div className="flex items-center justify-between mb-4">
                         <div className="p-2 rounded-lg bg-white/5 text-violet-400 group-hover:text-violet-300 transition-colors">
