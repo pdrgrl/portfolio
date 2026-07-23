@@ -12,10 +12,7 @@ export default function Contact() {
         <p className="font-mono text-xs text-violet-400/80 tracking-widest uppercase mb-4">Let's Talk</p>
         <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-6">Let's Connect</h2>
         <p className="text-base text-gray-400 leading-relaxed mb-10">
-          Open to remote Backend Developer, Software Engineer, Python Developer, AI Engineer, and DevOps Engineer roles.
-          Based in Lisbon, Portugal.
-          <br></br>
-          Long-term focus: space systems engineering.
+          Open to remote AI Engineer, RAG Engineer, and Cybersecurity / Cybercrime Defense roles — based in Lisbon, Portugal (CET/WET), working across EU and US time zones. Long-term focus: space systems engineering.
         </p>
         <div className="flex justify-center">
           <a

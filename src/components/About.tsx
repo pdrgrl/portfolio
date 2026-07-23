@@ -15,7 +15,7 @@ export default function About() {
           <div className="space-y-4 text-sm text-gray-400 leading-relaxed mb-8">
             <p>
               I'm a Systems and Infrastructure Engineer with 6+ years of experience in enterprise IT operations, 
-              system administration, and network security, now specializing in backend systems and applied AI (RAG &amp; LLM engineering).
+              system administration, and network security, currently targeting roles in applied AI (RAG &amp; LLM engineering) and cybersecurity.
             </p>
             <p>
               At SPORT TV, I progressed from IT Support Technician to IT Support Supervisor, maintaining 24/7 uptime for live 
@@ -28,7 +28,7 @@ export default function About() {
               retrieval-augmented generation (RAG) API in Python (FastAPI, ChromaDB, LLM APIs) containerised with Docker and deployed with CI/CD.
             </p>
             <p>
-              Open to remote Backend Developer, Software Engineer, Python Developer, AI Engineer, and DevOps Engineer roles. Long-term focus: space systems engineering.
+              Open to remote AI Engineer, RAG Engineer, and Cybersecurity / Cybercrime Defense roles. Long-term focus: space systems engineering.
             </p>
             <p className="mt-2 text-sm text-gray-300">
               Planned postgraduate study: MSc in Space Science and Technology (Digital Forensics &amp; Cyber Security) and a Master of Business Engineering (MBE) in Space Systems.
