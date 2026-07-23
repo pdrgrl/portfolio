@@ -12,7 +12,7 @@ const featuredProjects = [
   {
     title: 'Digital Twin — Early 20th-Century Energy System',
     description:
-      'Capstone dissertation project. Architected a real-time digital twin of a historical energy system: 3D reconstruction in Blender, real-time simulation in Unity (C#), and a Python RAG system querying historical museum archives via ChromaDB and vector search.',
+      'Capstone dissertation project. Architected a real-time digital twin of a historical energy system: 3D reconstruction in Blender, real-time simulation in Unity (C#), and a Python RAG system querying historical museum archives via ChromaDB and vector search (achieved highest grade of 20/20).',
     tags: ['Python', 'FastAPI', 'RAG', 'ChromaDB', 'Unity', 'C#', 'Blender'],
     links: { github: 'https://github.com/pdrgrl' },
     icon: Layers,

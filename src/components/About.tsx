@@ -24,7 +24,7 @@ export default function About() {
             <p>
               I completed a BSc in Computer and Multimedia Engineering at ISEL (Instituto Superior de Engenharia de Lisboa), with a 
               published research paper on digital twin architecture. My capstone combined physics-based simulation in OpenModelica 
-              with real-time 3D visualisation in Unity (C#) — a digital twin of a historic energy system. I also built a 
+              with real-time 3D visualisation in Unity (C#) — a digital twin of a historic energy system, achieving the highest possible grade (20/20). I also built a 
               retrieval-augmented generation (RAG) API in Python (FastAPI, ChromaDB, LLM APIs) containerised with Docker and deployed with CI/CD.
             </p>
             <p>
